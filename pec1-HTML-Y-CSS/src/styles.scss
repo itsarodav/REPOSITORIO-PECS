@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$primary-color: #C00625;
+$dark-color: #262626;
+$light-color: #FFF6EF;
+$font-stack: "Playfair Display", serif;
+$font-stack-sec: "Lato", sans-serif;
+
+html, body{
+    font-family: $font-stack;
+    font-family: $font-stack-sec;
+    background-color: $light-color;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 1em 2em;
+
+        .menu-icon, .close-icon {
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: $dark-color;
+            cursor: pointer;
+        }
+
+        nav{
+            background-color: $light-color;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5em 0;
+            justify-content: flex-start;
+            transform: translateY(-100%);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            z-index: 1;
+
+            ul{
+                list-style: none;
+                text-align: center;
+                width: 100%;
+                height: auto;
+                top:0;
+                border-bottom: 1px solid $dark-color;
+                border-top: 1px solid $dark-color;
+
+                li{
+                    padding: 3em 0;
+                    background-color: $light-color;
+                    border-bottom: 1px solid $dark-color;
+
+
+                    &:last-child{
+                        border-bottom: none;
+                    }
+
+                    a {
+                        color: $dark-color;
+                        text-decoration: none;
+                        font-size: 2rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+        }
+
+        .submenu {
+            position: relative;
+
+            .dropdown {
+                opacity: 0;
+                max-height: 0;
+                visibility: hidden;
+                overflow: hidden;
+                background-color: $light-color;
+                top: 80%;
+                border: none;
+                width: 100%;
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+            }
+            
+            .dropdown.active {
+                visibility: visible;
+                max-height: 100%;
+                margin: 0;
+                border-top: 1px solid;
+                opacity: 1;
+                transform: translateY(10%);
+
+                li{
+                    border-bottom: none;
+                    padding: 2.5em;
+                }
+
+            }
+        }
+        
+          /* Mostrar navbar */
+            .nav.active {
+            transform: translateX(0);
+            }
+            
+          /* Botón de cerrar */
+            .close-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            }
+    }
+
+    main{
+        flex: 1;
+        padding: 0 1.5em;
+
+        section{
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(20, 20, 20, 0.8) 80%), url(./img/hero-section-rp.jpg);
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            width: 100%;
+            height: 50%;
+            padding: 1em;
+            border-radius: 16px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding: 40px;
+
+            h1{
+                position: absolute;
+                bottom: 32px;
+                right: 32px;
+                width: 80%;
+                color: $light-color;
+                font-family: "Lato", sans-serif;
+                font-weight: 400;
+                font-size: 2.6rem;
+                text-align: right;
+                line-height: 1.2;
+
+
+            
+                span{
+                    font-family: "Playfair Display", serif;
+                    font-weight: 600;
+                    font-style: italic;
+                }
+            }
+    
+            p{
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    footer{
+        background-color: $dark-color;
+        height: 2em;
+        padding: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p{
+            color: $light-color;
+            font-weight: 500;
+        }
+    }
+}
+
+
+
+
+

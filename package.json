@@ -1,0 +1,24 @@
+{
+  "name": "repositorio-pecs",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:pec1": "parcel pec1-HTML-Y-CSS/src/index.html --dist-dir pec1-HTML-Y-CSS/dist --port 3000",
+    "build:pec1": "parcel build pec1-HTML-Y-CSS/src/index.html --dist-dir pec1-HTML-Y-CSS/dist",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.14.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.14.0",
+    "rimraf": "^6.0.1",
+    "svgo": "^3.3.2"
+  },
+  "dependencies": {
+    "sass": "^1.86.0"
+  }
+}
