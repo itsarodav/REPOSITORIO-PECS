@@ -9,6 +9,20 @@ $dark-color: #262626;
 $light-color: #FFF6EF;
 $font-stack: "Playfair Display", serif;
 $font-stack-sec: "Lato", sans-serif;
+$tablet: 768px;
+$desktop: 1024px;
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+    
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
 
 html, body{
     font-family: $font-stack;
@@ -17,26 +31,45 @@ html, body{
     height: 100%;
     min-height: 100vh;
     margin: 0;
-    display: flex;
-    flex-direction: column;
 
     header{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        position: sticky;
+        position: fixed;
         background-color: $light-color;
         top: 0;
         z-index: 1;
         width: 100%;
         padding: 1em 2em;
 
+        @include desktop{
+            padding: 1.8em 2em;
+        }
+
+        .logo{
+            max-width: 80%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            img{
+                max-width: 100%;
+            }
+        }
+
         .menu-icon, .close-icon {
-            font-size: 24px;
+            display: block;
+            width: 32px;
+            height: 32px;
             background: none;
             border: none;
             color: $dark-color;
             cursor: pointer;
+
+            @include desktop {
+                display: none;
+                }
         }
 
         nav{
@@ -49,11 +82,23 @@ html, body{
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 5em 0;
+            padding: 4em 0;
             justify-content: flex-start;
             transform: translateY(-100%);
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
             z-index: 1;
+            border-bottom: 1px solid $dark-color;
+
+            @include desktop {
+                position: static;
+                height: auto;
+                transform: none;
+                border: none;
+                flex-direction: row;
+                justify-content: flex-end;
+                padding: 0;
+                background-color: transparent;
+            }
 
             ul{
                 list-style: none;
@@ -64,30 +109,45 @@ html, body{
                 border-bottom: 1px solid $dark-color;
                 border-top: 1px solid $dark-color;
 
+                @include desktop {
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 2em;
+                    width: auto;
+                    border: none;
+                }
+
                 li{
-                    padding: 3em 0;
+                    padding: 2.6em 0;
                     background-color: $light-color;
                     border-bottom: 1px solid $dark-color;
-
 
                     &:last-child{
                         border-bottom: none;
                     }
 
+                    @include desktop {
+                        padding: 0;
+                        border: none;
+                    }
+
                     a {
                         color: $dark-color;
                         text-decoration: none;
-                        font-size: 2rem;
+                        font-size: 1.5rem;
                         font-weight: 600;
+
+                        @include desktop{
+                            font-size: 1.2rem;
+                        }
                     }
                 }
             }
-
-        }
+        
     
-
         .submenu {
             position: relative;
+            }
 
             .dropdown {
                 opacity: 0;
@@ -99,8 +159,11 @@ html, body{
                 border: none;
                 width: 100%;
                 transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-
+                
             }
+        
+            
+
             
             .dropdown.active {
                 visibility: visible;
@@ -112,7 +175,7 @@ html, body{
 
                 li{
                     border-bottom: none;
-                    padding: 2.5em;
+                    padding: 2.0em;
                 }
 
             }
@@ -132,24 +195,36 @@ html, body{
     }
 
     main{
-        flex: 1;
+        /*flex: 1;*/
         padding: 0 1.8em;
+        margin-top: 72px;
+
+        @include desktop{
+            margin-top: 88px;
+        }
 
         section{
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(8, 8, 8, 0.8) 80%), url(./img/hero-section-rp.jpg);
-            background-size: cover; 
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(33, 33, 33, 0.9) 70%), url(./img/hero-section-rp.jpg);
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
             width: 100%;
             height: 550px;
-
             padding: 1em;
             border-radius: 16px;
             display: flex;
             align-items: flex-end;
             justify-content: flex-end;
             padding: 40px;
+
+            @include tablet{
+                height: 600px;
+            }
+
+            @include desktop{
+                height: 600px;
+            }
 
             h1{
                 position: absolute;
@@ -159,32 +234,47 @@ html, body{
                 color: $light-color;
                 font-family: "Lato", sans-serif;
                 font-weight: 400;
-                font-size: 2.6rem;
+                font-size: 2.2rem;
                 text-align: right;
                 line-height: 1.2;
-
-
             
                 span{
                     font-family: "Playfair Display", serif;
                     font-weight: 600;
                     font-style: italic;
                 }
-            }
-    
-            p{
-                font-size: 1.5rem;
+
+                @include desktop{
+                    width: 60%;
+                    font-size: 4rem;
+                    bottom: 56px;
+                    right: 56px;
+                }
             }
         }
 
         .recetas-seleccionadas{
             display: flex;
             flex-direction: column;
+            gap: 3em;
+            margin-top: 2em;
+
+            @include desktop{
+                gap: 2em;
+            }
+
             h2{
+                font-size: 2em;
+                line-height: 1.5;
+                color: $dark-color;
                 span{
                     font-family: $font-stack;
                     font-weight: 600;
                     font-style: italic;
+                }
+
+                @include desktop{
+                    font-size: 2.2em;
                 }
             }
 
@@ -192,32 +282,155 @@ html, body{
                 display: flex;
                 flex-direction: column;
                 height: fit-content;
-                gap: 2em;
+                gap: 3em;
 
-                .card-recetas{
-                    background-color: red;
-                    width: 100%;
-                    height: 8em;
+                @include desktop{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 2em;
                 }
 
-                .card-recetas:last-child {
-                    margin-bottom: 5em; /* Esto empuja el footer hacia abajo */
+                .card-recetas{
+                    width: 100%;
+                    height: 450px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: start;
+                    gap: 0.6em;
+                    padding: 2em;
+                    border-radius: 16px;
+
+                    h3{
+                        color: $light-color;
+                        font-size: 1.8rem;
+
+                        @include desktop{
+                            font-size: 2rem;
+                        }
+                    }
+
+                    span{
+                        color: $light-color;
+                        font-family: $font-stack-sec;
+                        font-weight: 500;
+                        text-decoration: none;
+                        font-size: 1.3rem;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 0.5em;
+
+                        img {
+                            transition: transform 0.3s ease;
+                        }
+                    }
+
+                    &:hover span img {
+                        transform: translateX(16px);
+                    }
+
+                    &:hover{
+                        transform: scale(1.02);
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+                        cursor: pointer;
+                        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                    }
+
+                }
+
+                .lomo{
+                    background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(./img/lomo-saltado.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+
+                .ceviche{
+                    background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(./img/ceviche.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+
+                .causa{
+                    background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(./img/causa-limena.jpg);
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
                 }
             }
         }
 
         .acerca-de{
-            margin-bottom: 5em;
-            background-color: aqua;
+            background-color: #ede7d2;
+            display: flex;
+            flex-direction: column;
+            gap: 3em;
+            padding: 2em 2em 4em 2em;
+            border-radius: 16px;
+            margin-top: 2em;
+            margin-bottom: 4em;
             height: fit-content;
 
-            h2{
-                span{
-                    font-family: $font-stack;
-                    font-weight: 600;
-                    font-style: italic;
+            @include desktop{
+                display: flex;
+                flex-direction: row;
+                gap: 6em;
+                padding: 3.5em 3.5em 5em 3.5em;
+            }
+
+            .contenido-acerca-de{
+
+                display: flex;
+                flex-direction: column;
+                gap: 1.5em;
+                width: 100%;
+
+                @include desktop{
+                    width: auto;
+                    align-items: start;
+                    justify-content: center;
                 }
+
+                h2{
+                    text-align: left;
+                    font-size: 2rem;
+                    line-height: 1.5;
+                    color: $dark-color;
+
+                    span{
+                        font-family: $font-stack;
+                        font-weight: 600;
+                        font-style: italic;
+                        }
+
+                    @include desktop{
+                        font-size: 2.2rem;
+                    }
+                    }
+
+                p{
+                    font-size: 1.2rem;
+                    line-height: 1.5;
+                    width: 100%;
+
+                    @include desktop{
+                        width: fit-content;
+                        font-size: 1.6rem;
+                    }
+                    }
                 }
+                img{
+                    height: auto;
+                    width: 100%;
+
+                    @include desktop{
+                        height: 550px;
+                        width: fit-content;
+                    }
+                }
+
             }
         }
 
@@ -228,13 +441,14 @@ html, body{
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top:auto;
+        margin-top: auto;
     
-        p{
-            color: $light-color;
-            font-weight: 500;
-            text-align: center;
-        }
+            p{
+                color: $light-color;
+                font-weight: 500;
+                line-height: 1.5;
+                text-align: center;
+            }
         }
 }
 
