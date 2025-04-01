@@ -98,6 +98,13 @@ html, body{
                 justify-content: flex-end;
                 padding: 0;
                 background-color: transparent;
+
+                .submenu:hover .dropdown {
+                    visibility: visible;
+                    opacity: 1;
+                    max-height: 500px;
+                    transform: translateY(0); // o como máximo 4px
+                }
             }
 
             ul{
@@ -150,34 +157,42 @@ html, body{
             }
 
             .dropdown {
-                opacity: 0;
-                max-height: 0;
-                visibility: hidden;
-                overflow: hidden;
-                background-color: $light-color;
-                top: 80%;
-                border: none;
-                width: 100%;
-                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-                
+                display: none;
+
+                @include desktop {
+                    display: flex; // solo se muestra en desktop
+                    flex-direction: column;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background-color: $light-color;
+                    padding: 1em;
+                    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+                    width: auto;
+                    min-width: 160px;
+                    opacity: 0;
+                    visibility: hidden;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                }
             }
-        
-            
 
-            
-            .dropdown.active {
-                visibility: visible;
-                max-height: 100%;
-                margin: 0;
-                border-top: 1px solid;
-                opacity: 1;
-                transform: translateY(10%);
+                .dropdown.active {
+                    display: flex;
+                    flex-direction: column;
+                    visibility: visible;
+                    max-height: 100%;
+                    opacity: 1;
+                    transform: translateY(15%);
 
-                li{
-                    border-bottom: none;
-                    padding: 2.0em;
+                li {
+                    padding: 2em;
                 }
 
+                @include desktop {
+                    display: flex; 
+                }
             }
         }
         
