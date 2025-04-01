@@ -1,0 +1,437 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Playfair Display", serif;
+  font-family: "Lato", sans-serif;
+  background-color: #FFF6EF;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+}
+html header, body header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: #FFF6EF;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 1em 2em;
+  /* Mostrar navbar */
+  /* Botón de cerrar */
+}
+@media (min-width: 1024px) {
+  html header, body header {
+    padding: 1.8em 2em;
+  }
+}
+html header .logo, body header .logo {
+  max-width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+html header .logo img, body header .logo img {
+  max-width: 100%;
+}
+html header .menu-icon, html header .close-icon, body header .menu-icon, body header .close-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  color: #262626;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  html header .menu-icon, html header .close-icon, body header .menu-icon, body header .close-icon {
+    display: none;
+  }
+}
+html header nav, body header nav {
+  background-color: #FFF6EF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4em 0;
+  justify-content: flex-start;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 1;
+  border-bottom: 1px solid #262626;
+}
+@media (min-width: 1024px) {
+  html header nav, body header nav {
+    position: static;
+    height: auto;
+    transform: none;
+    border: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0;
+    background-color: transparent;
+  }
+  html header nav .submenu:hover .dropdown, body header nav .submenu:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+html header nav ul, body header nav ul {
+  list-style: none;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  top: 0;
+  border-bottom: 1px solid #262626;
+  border-top: 1px solid #262626;
+}
+@media (min-width: 1024px) {
+  html header nav ul, body header nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2em;
+    width: auto;
+    border: none;
+  }
+}
+html header nav ul li, body header nav ul li {
+  padding: 2.6em 0;
+  background-color: #FFF6EF;
+  border-bottom: 1px solid #262626;
+}
+html header nav ul li:last-child, body header nav ul li:last-child {
+  border-bottom: none;
+}
+@media (min-width: 1024px) {
+  html header nav ul li, body header nav ul li {
+    padding: 0;
+    border: none;
+  }
+}
+html header nav ul li a, html header nav ul li a:visited, html header nav ul li a:hover, html header nav ul li a:active, body header nav ul li a, body header nav ul li a:visited, body header nav ul li a:hover, body header nav ul li a:active {
+  color: #262626;
+  text-decoration: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+@media (min-width: 1024px) {
+  html header nav ul li a, html header nav ul li a:visited, html header nav ul li a:hover, html header nav ul li a:active, body header nav ul li a, body header nav ul li a:visited, body header nav ul li a:hover, body header nav ul li a:active {
+    font-size: 1.2rem;
+  }
+}
+html header nav .submenu, body header nav .submenu {
+  position: relative;
+}
+html header nav .dropdown, body header nav .dropdown {
+  display: none;
+}
+@media (min-width: 1024px) {
+  html header nav .dropdown, body header nav .dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFF6EF;
+    padding: 1em;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+    width: auto;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+}
+html header nav .dropdown.active, body header nav .dropdown.active {
+  display: flex;
+  flex-direction: column;
+  visibility: visible;
+  max-height: 100%;
+  opacity: 1;
+  transform: translateY(15%);
+}
+html header nav .dropdown.active li, body header nav .dropdown.active li {
+  padding: 2em;
+}
+@media (min-width: 1024px) {
+  html header nav .dropdown.active, body header nav .dropdown.active {
+    display: flex;
+  }
+}
+html header .nav.active, body header .nav.active {
+  transform: translateX(0);
+}
+html header .close-icon, body header .close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+html main, body main {
+  /*flex: 1;*/
+  padding: 0 1.8em;
+  margin-top: 72px;
+}
+@media (min-width: 1024px) {
+  html main, body main {
+    margin-top: 88px;
+  }
+}
+html main section, body main section {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(33, 33, 33, 0.9) 70%), url(../img/hero-section-rp.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 550px;
+  padding: 1em;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 40px;
+}
+@media (min-width: 768px) {
+  html main section, body main section {
+    height: 600px;
+  }
+}
+@media (min-width: 1024px) {
+  html main section, body main section {
+    height: 600px;
+  }
+}
+html main section h1, body main section h1 {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  width: 80%;
+  color: #FFF6EF;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 2.2rem;
+  text-align: right;
+  line-height: 1.2;
+}
+html main section h1 span, body main section h1 span {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+@media (min-width: 1024px) {
+  html main section h1, body main section h1 {
+    width: 60%;
+    font-size: 4rem;
+    bottom: 56px;
+    right: 56px;
+  }
+}
+html main .recetas-seleccionadas, body main .recetas-seleccionadas {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  margin-top: 2em;
+}
+@media (min-width: 1024px) {
+  html main .recetas-seleccionadas, body main .recetas-seleccionadas {
+    gap: 2em;
+  }
+}
+html main .recetas-seleccionadas h2, body main .recetas-seleccionadas h2 {
+  font-size: 2em;
+  line-height: 1.5;
+  color: #262626;
+}
+html main .recetas-seleccionadas h2 span, body main .recetas-seleccionadas h2 span {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+@media (min-width: 1024px) {
+  html main .recetas-seleccionadas h2, body main .recetas-seleccionadas h2 {
+    font-size: 2.2em;
+  }
+}
+html main .recetas-seleccionadas .grid-cards, body main .recetas-seleccionadas .grid-cards {
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 3em;
+}
+@media (min-width: 1024px) {
+  html main .recetas-seleccionadas .grid-cards, body main .recetas-seleccionadas .grid-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+}
+html main .recetas-seleccionadas .grid-cards .card-recetas, html main .recetas-seleccionadas .grid-cards .card-recetas:hover, html main .recetas-seleccionadas .grid-cards .card-recetas:active, html main .recetas-seleccionadas .grid-cards .card-recetas:focus, html main .recetas-seleccionadas .grid-cards .card-recetas:visited, body main .recetas-seleccionadas .grid-cards .card-recetas, body main .recetas-seleccionadas .grid-cards .card-recetas:hover, body main .recetas-seleccionadas .grid-cards .card-recetas:active, body main .recetas-seleccionadas .grid-cards .card-recetas:focus, body main .recetas-seleccionadas .grid-cards .card-recetas:visited {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: start;
+  gap: 0.6em;
+  padding: 2em;
+  border-radius: 16px;
+  text-decoration: none;
+  outline: none;
+  color: #FFF6EF;
+}
+html main .recetas-seleccionadas .grid-cards .card-recetas h3, html main .recetas-seleccionadas .grid-cards .card-recetas:hover h3, html main .recetas-seleccionadas .grid-cards .card-recetas:active h3, html main .recetas-seleccionadas .grid-cards .card-recetas:focus h3, html main .recetas-seleccionadas .grid-cards .card-recetas:visited h3, body main .recetas-seleccionadas .grid-cards .card-recetas h3, body main .recetas-seleccionadas .grid-cards .card-recetas:hover h3, body main .recetas-seleccionadas .grid-cards .card-recetas:active h3, body main .recetas-seleccionadas .grid-cards .card-recetas:focus h3, body main .recetas-seleccionadas .grid-cards .card-recetas:visited h3 {
+  color: #FFF6EF;
+  font-size: 1.8rem;
+}
+@media (min-width: 1024px) {
+  html main .recetas-seleccionadas .grid-cards .card-recetas h3, html main .recetas-seleccionadas .grid-cards .card-recetas:hover h3, html main .recetas-seleccionadas .grid-cards .card-recetas:active h3, html main .recetas-seleccionadas .grid-cards .card-recetas:focus h3, html main .recetas-seleccionadas .grid-cards .card-recetas:visited h3, body main .recetas-seleccionadas .grid-cards .card-recetas h3, body main .recetas-seleccionadas .grid-cards .card-recetas:hover h3, body main .recetas-seleccionadas .grid-cards .card-recetas:active h3, body main .recetas-seleccionadas .grid-cards .card-recetas:focus h3, body main .recetas-seleccionadas .grid-cards .card-recetas:visited h3 {
+    font-size: 2rem;
+  }
+}
+html main .recetas-seleccionadas .grid-cards .card-recetas span, html main .recetas-seleccionadas .grid-cards .card-recetas span:hover, html main .recetas-seleccionadas .grid-cards .card-recetas:hover span, html main .recetas-seleccionadas .grid-cards .card-recetas:hover span:hover, html main .recetas-seleccionadas .grid-cards .card-recetas:active span, html main .recetas-seleccionadas .grid-cards .card-recetas:active span:hover, html main .recetas-seleccionadas .grid-cards .card-recetas:focus span, html main .recetas-seleccionadas .grid-cards .card-recetas:focus span:hover, html main .recetas-seleccionadas .grid-cards .card-recetas:visited span, html main .recetas-seleccionadas .grid-cards .card-recetas:visited span:hover, body main .recetas-seleccionadas .grid-cards .card-recetas span, body main .recetas-seleccionadas .grid-cards .card-recetas span:hover, body main .recetas-seleccionadas .grid-cards .card-recetas:hover span, body main .recetas-seleccionadas .grid-cards .card-recetas:hover span:hover, body main .recetas-seleccionadas .grid-cards .card-recetas:active span, body main .recetas-seleccionadas .grid-cards .card-recetas:active span:hover, body main .recetas-seleccionadas .grid-cards .card-recetas:focus span, body main .recetas-seleccionadas .grid-cards .card-recetas:focus span:hover, body main .recetas-seleccionadas .grid-cards .card-recetas:visited span, body main .recetas-seleccionadas .grid-cards .card-recetas:visited span:hover {
+  color: #FFF6EF;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  outline: none;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
+}
+html main .recetas-seleccionadas .grid-cards .card-recetas span img, html main .recetas-seleccionadas .grid-cards .card-recetas span:hover img, html main .recetas-seleccionadas .grid-cards .card-recetas:hover span img, html main .recetas-seleccionadas .grid-cards .card-recetas:hover span:hover img, html main .recetas-seleccionadas .grid-cards .card-recetas:active span img, html main .recetas-seleccionadas .grid-cards .card-recetas:active span:hover img, html main .recetas-seleccionadas .grid-cards .card-recetas:focus span img, html main .recetas-seleccionadas .grid-cards .card-recetas:focus span:hover img, html main .recetas-seleccionadas .grid-cards .card-recetas:visited span img, html main .recetas-seleccionadas .grid-cards .card-recetas:visited span:hover img, body main .recetas-seleccionadas .grid-cards .card-recetas span img, body main .recetas-seleccionadas .grid-cards .card-recetas span:hover img, body main .recetas-seleccionadas .grid-cards .card-recetas:hover span img, body main .recetas-seleccionadas .grid-cards .card-recetas:hover span:hover img, body main .recetas-seleccionadas .grid-cards .card-recetas:active span img, body main .recetas-seleccionadas .grid-cards .card-recetas:active span:hover img, body main .recetas-seleccionadas .grid-cards .card-recetas:focus span img, body main .recetas-seleccionadas .grid-cards .card-recetas:focus span:hover img, body main .recetas-seleccionadas .grid-cards .card-recetas:visited span img, body main .recetas-seleccionadas .grid-cards .card-recetas:visited span:hover img {
+  transition: transform 0.3s ease;
+}
+html main .recetas-seleccionadas .grid-cards .card-recetas:hover span img, html main .recetas-seleccionadas .grid-cards .card-recetas:hover:hover span img, html main .recetas-seleccionadas .grid-cards .card-recetas:active:hover span img, html main .recetas-seleccionadas .grid-cards .card-recetas:focus:hover span img, html main .recetas-seleccionadas .grid-cards .card-recetas:visited:hover span img, body main .recetas-seleccionadas .grid-cards .card-recetas:hover span img, body main .recetas-seleccionadas .grid-cards .card-recetas:hover:hover span img, body main .recetas-seleccionadas .grid-cards .card-recetas:active:hover span img, body main .recetas-seleccionadas .grid-cards .card-recetas:focus:hover span img, body main .recetas-seleccionadas .grid-cards .card-recetas:visited:hover span img {
+  transform: translateX(16px);
+}
+html main .recetas-seleccionadas .grid-cards .card-recetas:hover, html main .recetas-seleccionadas .grid-cards .card-recetas:hover:hover, html main .recetas-seleccionadas .grid-cards .card-recetas:active:hover, html main .recetas-seleccionadas .grid-cards .card-recetas:focus:hover, html main .recetas-seleccionadas .grid-cards .card-recetas:visited:hover, body main .recetas-seleccionadas .grid-cards .card-recetas:hover, body main .recetas-seleccionadas .grid-cards .card-recetas:hover:hover, body main .recetas-seleccionadas .grid-cards .card-recetas:active:hover, body main .recetas-seleccionadas .grid-cards .card-recetas:focus:hover, body main .recetas-seleccionadas .grid-cards .card-recetas:visited:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+html main .recetas-seleccionadas .grid-cards .lomo, body main .recetas-seleccionadas .grid-cards .lomo {
+  background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(../img/lomo-saltado.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+html main .recetas-seleccionadas .grid-cards .ceviche, body main .recetas-seleccionadas .grid-cards .ceviche {
+  background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(../img/ceviche.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+html main .recetas-seleccionadas .grid-cards .causa, body main .recetas-seleccionadas .grid-cards .causa {
+  background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(../img/causa-limena.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+html main .acerca-de, body main .acerca-de {
+  background-color: #ede7d2;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding: 2em 2em 4em 2em;
+  border-radius: 16px;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media (min-width: 1024px) {
+  html main .acerca-de, body main .acerca-de {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6em;
+    padding: 3.5em 3.5em 5em 3.5em;
+  }
+}
+html main .acerca-de .contenido-acerca-de, body main .acerca-de .contenido-acerca-de {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  html main .acerca-de .contenido-acerca-de, body main .acerca-de .contenido-acerca-de {
+    width: auto;
+    align-items: start;
+    justify-content: center;
+  }
+}
+html main .acerca-de .contenido-acerca-de h2, body main .acerca-de .contenido-acerca-de h2 {
+  text-align: left;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: #262626;
+}
+html main .acerca-de .contenido-acerca-de h2 span, body main .acerca-de .contenido-acerca-de h2 span {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+@media (min-width: 1024px) {
+  html main .acerca-de .contenido-acerca-de h2, body main .acerca-de .contenido-acerca-de h2 {
+    font-size: 2.2rem;
+  }
+}
+html main .acerca-de .contenido-acerca-de p, body main .acerca-de .contenido-acerca-de p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  html main .acerca-de .contenido-acerca-de p, body main .acerca-de .contenido-acerca-de p {
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 1.6rem;
+  }
+}
+html main .acerca-de img, body main .acerca-de img {
+  height: auto;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  html main .acerca-de img, body main .acerca-de img {
+    height: 550px;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+html footer, body footer {
+  background-color: #262626;
+  height: auto;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+html footer p, body footer p {
+  color: #FFF6EF;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+}

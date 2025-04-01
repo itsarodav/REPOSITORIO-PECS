@@ -1,4 +1,4 @@
-import "./styles.scss";
+import "./css/styles.css";
 
 const menuToggle = document.getElementById('menu-toggle');
 const closeMenu = document.getElementById('close-menu');
@@ -31,6 +31,6 @@ function isMobile() {
         e.preventDefault();
         dropdown.classList.add("active");
         } 
-      // Segundo click: no se hace preventDefault, va al enlace normalmente
+        // Segundo click: no se hace preventDefault, va al enlace normalmente
     }
 });

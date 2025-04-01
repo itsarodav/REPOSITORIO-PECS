@@ -1,4 +1,16 @@
+# Sistema y editor
+.DS_Store
+.vscode/
+
+# Node.js
 node_modules/
-dist/
 .parcel-cache/
-pec1-HTML-Y-CSS/dist
+
+# Archivos de compilación
+dist/
+css/styles.css
+**/*.css.map
+*.log
+
+# Cache de Live Sass Compiler
+.sass-cache/

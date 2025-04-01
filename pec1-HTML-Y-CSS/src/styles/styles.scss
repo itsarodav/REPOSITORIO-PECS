@@ -1,3 +1,15 @@
+//Layout general
+@import 'layout/header';
+@import 'layout/footer';
+
+//Estilos por página
+@import 'pages/recetas';
+@import 'pages/lomo';
+@import 'pages/ceviche';
+@import 'pages/enlaces';
+
+//Aplicamos los estilos
+
 *{
     margin: 0;
     padding: 0;
@@ -138,9 +150,10 @@ html, body{
                         border: none;
                     }
 
-                    a {
+                    a, a:visited, a:hover , a:active {
                         color: $dark-color;
                         text-decoration: none;
+                        outline: none;
                         font-size: 1.5rem;
                         font-weight: 600;
 
@@ -160,7 +173,7 @@ html, body{
                 display: none;
 
                 @include desktop {
-                    display: flex; // solo se muestra en desktop
+                    display: flex;
                     flex-direction: column;
                     position: absolute;
                     top: 100%;
@@ -219,7 +232,7 @@ html, body{
         }
 
         section{
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(33, 33, 33, 0.9) 70%), url(./img/hero-section-rp.jpg);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(33, 33, 33, 0.9) 70%), url(../img/hero-section-rp.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -305,7 +318,7 @@ html, body{
                     gap: 2em;
                 }
 
-                .card-recetas{
+                .card-recetas, .card-recetas:hover, .card-recetas:active, .card-recetas:focus, .card-recetas:visited{
                     width: 100%;
                     height: 450px;
                     display: flex;
@@ -315,6 +328,9 @@ html, body{
                     gap: 0.6em;
                     padding: 2em;
                     border-radius: 16px;
+                    text-decoration: none;
+                    outline: none;
+                    color: $light-color;
 
                     h3{
                         color: $light-color;
@@ -325,11 +341,12 @@ html, body{
                         }
                     }
 
-                    span{
+                    span, span:hover{
                         color: $light-color;
                         font-family: $font-stack-sec;
                         font-weight: 500;
                         text-decoration: none;
+                        outline: none;
                         font-size: 1.3rem;
                         display: flex;
                         justify-content: flex-start;
@@ -355,21 +372,21 @@ html, body{
                 }
 
                 .lomo{
-                    background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(./img/lomo-saltado.jpg);
+                    background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(../img/lomo-saltado.jpg);
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
                 }
 
                 .ceviche{
-                    background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(./img/ceviche.jpg);
+                    background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(../img/ceviche.jpg);
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
                 }
 
                 .causa{
-                    background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(./img/causa-limena.jpg);
+                    background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(../img/causa-limena.jpg);
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
@@ -391,6 +408,7 @@ html, body{
             @include desktop{
                 display: flex;
                 flex-direction: row;
+                justify-content: center;
                 gap: 6em;
                 padding: 3.5em 3.5em 5em 3.5em;
             }
