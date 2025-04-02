@@ -204,6 +204,140 @@ footer p {
   text-align: center;
 }
 
+.comida-criolla {
+  background-color: #FFF6EF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.comida-criolla .hero-comida-criolla {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(18, 18, 18) 98%), url(../img/comida-criolla-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 650px;
+  padding: 1em;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 40px;
+}
+@media (min-width: 768px) {
+  .comida-criolla .hero-comida-criolla {
+    height: 600px;
+  }
+}
+@media (min-width: 1024px) {
+  .comida-criolla .hero-comida-criolla {
+    height: 70vh;
+  }
+}
+.comida-criolla .hero-comida-criolla h1 {
+  font-size: 5rem;
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  width: 80%;
+  color: #FFF6EF;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  text-align: right;
+  line-height: 1;
+}
+.comida-criolla .hero-comida-criolla h1 span {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+.comida-criolla .container-general {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4em;
+}
+@media (min-width: 1024px) {
+  .comida-criolla .container-general {
+    max-width: 1440px;
+  }
+}
+.comida-criolla .container-general .intro-comida {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1em;
+  padding: 1em 0;
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+.comida-criolla .container-general .intro-comida h2 {
+  color: #262626;
+  text-align: left;
+  font-size: 2.5rem;
+}
+.comida-criolla .container-general .intro-comida h2 span {
+  font-family: "Playfair Display", serif;
+}
+.comida-criolla .container-general .intro-comida p {
+  color: #262626;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.comida-criolla .container-general .grid-recetas-criollas {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+  width: 100%;
+}
+.comida-criolla .container-general .grid-recetas-criollas .card-receta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+  background-color: #fcfcfc;
+  border-radius: 16px;
+  padding: 2em 1.8em;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.comida-criolla .container-general .grid-recetas-criollas .card-receta img {
+  height: auto;
+  width: 100%;
+  border-radius: 8px;
+}
+.comida-criolla .container-general .grid-recetas-criollas .card-receta .card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+.comida-criolla .container-general .grid-recetas-criollas .card-receta .card-text h3 {
+  color: #262626;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.comida-criolla .container-general .grid-recetas-criollas .card-receta .card-text p {
+  color: #262626;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.comida-criolla .container-general .grid-recetas-criollas .card-receta .btn-receta {
+  background-color: transparent;
+  padding: 0.8em 1.5em;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: #262626;
+  font-weight: 600;
+  border: solid 1px #262626;
+  text-decoration: none;
+  outline: none;
+}
+
 .receta-lomo {
   background-color: #FFF6EF;
   display: flex;
