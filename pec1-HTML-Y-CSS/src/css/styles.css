@@ -323,6 +323,7 @@ footer p {
   color: #262626;
   font-weight: 400;
   font-size: 1.2rem;
+  line-height: 1.5;
 }
 .comida-criolla .container-general .grid-recetas-criollas .card-receta .btn-receta {
   background-color: transparent;
