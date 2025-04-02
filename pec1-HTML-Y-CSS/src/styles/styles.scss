@@ -1,20 +1,4 @@
-//Layout general
-@import 'layout/header';
-@import 'layout/footer';
-
-//Estilos por página
-@import 'pages/recetas';
-@import 'pages/lomo';
-@import 'pages/ceviche';
-@import 'pages/enlaces';
-
-//Aplicamos los estilos
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+//Mantengo las variables y mixins dentro del mismo documento principal
 
 $primary-color: #C00625;
 $dark-color: #262626;
@@ -36,6 +20,24 @@ $desktop: 1024px;
     }
 }
 
+//Layout general
+@import 'layout/header';
+@import 'layout/footer';
+
+//Estilos por página
+@import './pages/recetas';
+@import './pages/lomo';
+@import './pages/ceviche';
+@import './pages/enlaces';
+
+//Aplicamos los estilos
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html, body{
     font-family: $font-stack;
     font-family: $font-stack-sec;
@@ -51,11 +53,11 @@ html, body{
         margin-top: 72px;
 
         @include desktop{
-            margin-top: 88px;
+            margin-top: 80px;
         }
 
-        section{
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(33, 33, 33, 0.9) 70%), url(../img/hero-section-rp.jpg);
+        .hero-home{
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(18, 18, 18, 0.9) 70%), url(../img/hero-section-rp.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -74,7 +76,7 @@ html, body{
             }
 
             @include desktop{
-                height: 600px;
+                height: 85vh;
             }
 
             h1{
@@ -85,7 +87,7 @@ html, body{
                 color: $light-color;
                 font-family: "Lato", sans-serif;
                 font-weight: 400;
-                font-size: 2.2rem;
+                font-size: 2.7rem;
                 text-align: right;
                 line-height: 1.2;
             

@@ -5,7 +5,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:pec1": "parcel pec1-HTML-Y-CSS/src/index.html --dist-dir pec1-HTML-Y-CSS/dist --port 3000",
     "build:pec1": "parcel build pec1-HTML-Y-CSS/src/index.html --dist-dir pec1-HTML-Y-CSS/dist",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "clean": "rimraf dist .parcel-cache",
+    "rebuild": "npm run clean && npm run build:pec1"
   },
   "keywords": [],
   "author": "",
