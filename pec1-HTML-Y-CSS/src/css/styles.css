@@ -187,6 +187,10 @@ footer p {
 
 .receta-lomo {
   background-color: #FFF6EF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .receta-lomo .hero-lomo {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(18, 18, 18) 98%), url(../img/lomo-saltado.jpg);
@@ -214,7 +218,7 @@ footer p {
   }
 }
 .receta-lomo .hero-lomo h1 {
-  font-size: 6rem;
+  font-size: 5rem;
   position: absolute;
   bottom: 32px;
   right: 32px;
@@ -230,14 +234,27 @@ footer p {
   font-weight: 500;
   font-style: italic;
 }
-.receta-lomo .datos-contenido {
+.receta-lomo .container-general {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .receta-lomo .container-general {
+    max-width: 1440px;
+  }
+}
+.receta-lomo .container-general .datos-contenido {
   display: flex;
   flex-direction: row;
   gap: 1em;
   padding: 1em 0;
   align-items: center;
+  width: 100%;
 }
-.receta-lomo .datos-contenido .raciones {
+.receta-lomo .container-general .datos-contenido .raciones {
   background-color: rgb(223, 238, 255);
   border: solid 1px rgb(160, 190, 216);
   display: flex;
@@ -246,17 +263,17 @@ footer p {
   padding: 0.5em 1.2em;
   border-radius: 200px;
 }
-.receta-lomo .datos-contenido .raciones i {
+.receta-lomo .container-general .datos-contenido .raciones i {
   font-size: 1rem;
   color: rgb(25, 96, 158);
 }
-.receta-lomo .datos-contenido .raciones p {
+.receta-lomo .container-general .datos-contenido .raciones p {
   margin: 0;
   font-weight: 500;
   color: rgb(25, 96, 158);
   font-weight: 700;
 }
-.receta-lomo .datos-contenido .tiempo {
+.receta-lomo .container-general .datos-contenido .tiempo {
   background-color: rgb(228, 255, 220);
   border: solid 1px rgb(186, 220, 175);
   display: flex;
@@ -265,87 +282,279 @@ footer p {
   padding: 0.5em 1.2em;
   border-radius: 200px;
 }
-.receta-lomo .datos-contenido .tiempo i {
+.receta-lomo .container-general .datos-contenido .tiempo i {
   font-size: 1rem;
   color: rgb(29, 100, 49);
 }
-.receta-lomo .datos-contenido .tiempo p {
+.receta-lomo .container-general .datos-contenido .tiempo p {
   color: rgb(29, 100, 49);
   font-weight: 700;
 }
-.receta-lomo .ingredientes {
+.receta-lomo .container-general .ingredientes {
   margin-top: 2em;
+  width: 100%;
   padding: 1.5em;
   background-color: #fffaf5;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
-.receta-lomo .ingredientes h2 {
+.receta-lomo .container-general .ingredientes h2 {
   font-size: 1.8rem;
   margin-bottom: 1em;
   color: #262626;
 }
-.receta-lomo .ingredientes ul {
+.receta-lomo .container-general .ingredientes ul {
   list-style: disc inside;
   display: flex;
   flex-direction: column;
   gap: 0.8em;
 }
-.receta-lomo .ingredientes ul li {
+.receta-lomo .container-general .ingredientes ul li {
   font-size: 1.1rem;
   line-height: 1.5;
   color: #262626;
 }
-.receta-lomo .imgs-lomo {
+.receta-lomo .container-general .imgs-lomo {
   margin: 2em auto;
   display: flex;
   justify-content: center;
 }
-.receta-lomo .imgs-lomo img {
+.receta-lomo .container-general .imgs-lomo img {
   width: 100%;
   max-width: 800px;
   height: auto;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.receta-lomo .preparacion {
+.receta-lomo .container-general .preparacion {
   margin-top: 2em;
   padding: 1.5em;
   background-color: #fffaf5;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   margin-bottom: 2em;
+  width: 100%;
 }
-.receta-lomo .preparacion h2 {
+.receta-lomo .container-general .preparacion h2 {
   font-size: 1.8rem;
   margin-bottom: 1em;
   color: #262626;
 }
-.receta-lomo .preparacion ol {
+.receta-lomo .container-general .preparacion ol {
   list-style: decimal inside;
   display: flex;
   flex-direction: column;
   gap: 0.8em;
 }
-.receta-lomo .preparacion ol li {
+.receta-lomo .container-general .preparacion ol li {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #262626;
 }
-.receta-lomo .frase-final {
+.receta-lomo .container-general .frase-final {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 4em;
   margin-bottom: 3em;
 }
-.receta-lomo .frase-final h3 {
+.receta-lomo .container-general .frase-final h3 {
   font-size: 2.5rem;
   color: #262626;
   text-align: center;
   line-height: 1.5;
 }
-.receta-lomo .frase-final h3 span {
+.receta-lomo .container-general .frase-final h3 span {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+
+.receta-ceviche {
+  background-color: #FFF6EF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.receta-ceviche .hero-ceviche {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(18, 18, 18) 98%), url(../img/ceviche.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 650px;
+  padding: 1em;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 40px;
+}
+@media (min-width: 768px) {
+  .receta-ceviche .hero-ceviche {
+    height: 600px;
+  }
+}
+@media (min-width: 1024px) {
+  .receta-ceviche .hero-ceviche {
+    height: 70vh;
+  }
+}
+.receta-ceviche .hero-ceviche h1 {
+  font-size: 5rem;
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  width: 80%;
+  color: #FFF6EF;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  text-align: right;
+  line-height: 1;
+}
+@media (min-width: 1024px) {
+  .receta-ceviche .hero-ceviche h1 {
+    font-size: 6rem;
+    bottom: 56px;
+    right: 56px;
+  }
+}
+.receta-ceviche .hero-ceviche h1 span {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+.receta-ceviche .container-general {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .receta-ceviche .container-general {
+    max-width: 1440px;
+  }
+}
+.receta-ceviche .container-general .datos-contenido {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1em;
+  padding: 1em 0;
+  align-items: center;
+}
+.receta-ceviche .container-general .datos-contenido .raciones {
+  background-color: rgb(223, 238, 255);
+  border: solid 1px rgb(160, 190, 216);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1.2em;
+  border-radius: 200px;
+}
+.receta-ceviche .container-general .datos-contenido .raciones i {
+  font-size: 1rem;
+  color: rgb(25, 96, 158);
+}
+.receta-ceviche .container-general .datos-contenido .raciones p {
+  margin: 0;
+  font-weight: 700;
+  color: rgb(25, 96, 158);
+}
+.receta-ceviche .container-general .datos-contenido .tiempo {
+  background-color: rgb(228, 255, 220);
+  border: solid 1px rgb(186, 220, 175);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1.2em;
+  border-radius: 200px;
+}
+.receta-ceviche .container-general .datos-contenido .tiempo i {
+  font-size: 1rem;
+  color: rgb(29, 100, 49);
+}
+.receta-ceviche .container-general .datos-contenido .tiempo p {
+  color: rgb(29, 100, 49);
+  font-weight: 700;
+}
+.receta-ceviche .container-general .ingredientes {
+  margin-top: 2em;
+  width: 100%;
+  padding: 1.5em;
+  background-color: #fffaf5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.receta-ceviche .container-general .ingredientes h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1em;
+  color: #262626;
+}
+.receta-ceviche .container-general .ingredientes ul {
+  list-style: disc inside;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+.receta-ceviche .container-general .ingredientes ul li {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #262626;
+}
+.receta-ceviche .container-general .imgs-ceviche {
+  margin: 2em auto;
+  display: flex;
+  justify-content: center;
+}
+.receta-ceviche .container-general .imgs-ceviche img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.receta-ceviche .container-general .preparacion {
+  margin-top: 2em;
+  padding: 1.5em;
+  width: 100%;
+  background-color: #fffaf5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2em;
+}
+.receta-ceviche .container-general .preparacion h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1em;
+  color: #262626;
+}
+.receta-ceviche .container-general .preparacion ol {
+  list-style: decimal inside;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+.receta-ceviche .container-general .preparacion ol li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #262626;
+}
+.receta-ceviche .container-general .frase-final {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4em;
+  margin-bottom: 3em;
+}
+.receta-ceviche .container-general .frase-final h3 {
+  font-size: 2.5rem;
+  color: #262626;
+  text-align: center;
+  line-height: 1.5;
+}
+.receta-ceviche .container-general .frase-final h3 span {
   font-family: "Playfair Display", serif;
   font-style: italic;
 }
@@ -361,8 +570,10 @@ html, body {
   font-family: "Lato", sans-serif;
   background-color: #FFF6EF;
   height: 100%;
-  min-height: 100vh;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 html main, body main {
   /*flex: 1;*/

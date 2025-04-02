@@ -45,8 +45,10 @@ html, body{
     font-family: $font-stack-sec;
     background-color: $light-color;
     height: 100%;
-    min-height: 100vh;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
     
     main{

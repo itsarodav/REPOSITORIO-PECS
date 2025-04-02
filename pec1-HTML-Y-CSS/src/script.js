@@ -1,38 +1,39 @@
 import "./styles/styles.scss";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-
 const menuToggle = document.getElementById('menu-toggle');
 const closeMenu = document.getElementById('close-menu');
 const navbar = document.getElementById('navbar');
 const ddCategoria = document.querySelector(".submenu > a");
 const dropdown = document.querySelector(".submenu .dropdown");
-const categoriaLink = document.getElementById("dd-selection");
 
-menuToggle.addEventListener('click', () => {
-    navbar.classList.add('active');
-});
+let submenuAbierto = false;
 
-closeMenu.addEventListener('click', () => {
-    navbar.classList.remove('active');
-});
-
-ddCategoria.addEventListener("click", (event) => {
-    event.preventDefault(); // Evita que el enlace redirija
-    dropdown.classList.toggle("active");
-});
-
+// Función para detectar mobile
 function isMobile() {
-    return window.innerWidth < 768; // o tu breakpoint
+  return window.innerWidth < 1024; // del breakpoint
 }
 
-    categoriaLink.addEventListener("click", function (e) {
+// Abrir/cerrar menú hamburguesa
+menuToggle.addEventListener('click', () => {
+    navbar.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', () => {
+    navbar.classList.remove('active');
+    });
+
+    // Submenú mobile - toggle + navegación
+    ddCategoria.addEventListener("click", (e) => {
     if (isMobile()) {
-        if (!dropdown.classList.contains("active")) {
-        // Primer click: abre el submenu
-        e.preventDefault();
+        if (!submenuAbierto) {
+        e.preventDefault(); // Evita navegación en el primer click
         dropdown.classList.add("active");
-        } 
-        // Segundo click: no se hace preventDefault, va al enlace normalmente
+        submenuAbierto = true;
+        } else {
+        // Segundo click: deja que el enlace funcione normalmente
+        submenuAbierto = false;
+        }
     }
 });
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Recetas peruanas - Comida Criolla</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+        <img src="./img/logo-recetas-peruanas.svg" alt="Logo de Recetas peruanas" />
+        </div>
+        <button id="menu-toggle" class="menu-icon">
+        <img src="./img/menu-icon.svg" alt="botón de menú" />
+        </button>
+        <nav id="navbar" class="nav">
+        <button id="close-menu" class="close-icon">
+            <img src="./img/close-icon.svg" alt="botón para cerrar menú" />
+        </button>
+        <ul>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./categorias.html">Comida criolla</a></li>
+            <li><a href="./enlaces.html">Enlaces</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <main class="comida-criolla">
+
+        <section class="hero-comida-criolla">
+        <h1>Comida <span>criolla</span></h1>
+        </section>
+        <div class="container-general">
+            <section class="intro-comida">
+            <h2>Nuestras recetas criollas</h2>
+            <p>Descubre lo mejor de la cocina criolla peruana: recetas tradicionales, sabores intensos y platos llenos de historia.</p>
+            </section>
+
+
+            <section class="grid-recetas-criollas">
+            <article class="card-receta">
+                <img src="./img/lomo-saltado.jpg" alt="Imagen de Lomo Saltado">
+                <h3>Lomo Saltado</h3>
+                <p>Una fusión de sabores chinos y peruanos. Carne salteada, papas fritas y arroz blanco.</p>
+                <a href="./lomo-saltado.html" class="btn-receta">Ver receta</a>
+            </article>
+
+            <article class="card-receta">
+                <img src="./img/ceviche.jpg" alt="Imagen de Ceviche">
+                <h3>Ceviche</h3>
+                <p>El clásico peruano con pescado fresco marinado en limón, cebolla y ají.</p>
+                <a href="./ceviche.html" class="btn-receta">Ver receta</a>
+            </article>
+
+            <article class="card-receta">
+                <img src="./img/causa-limena.jpg" alt="Imagen de Causa Limeña">
+                <h3>Causa limeña</h3>
+                <p>Puré de papa amarilla con ají, relleno de pollo, atún o verduras.</p>
+                <a href="#" class="btn-receta">Ver receta</a>
+            </article>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Realizado por Andrea Robles Dávila. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./script.js" type="module"></script>
+</body>
+</html>
