@@ -1,4 +1,6 @@
-import "./css/styles.css";
+import "./styles/styles.scss";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 const menuToggle = document.getElementById('menu-toggle');
 const closeMenu = document.getElementById('close-menu');
