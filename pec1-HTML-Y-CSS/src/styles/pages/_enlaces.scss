@@ -49,17 +49,31 @@
         line-height: 1.6;
         color: $dark-color;
     
-        span {
-            font-family: $font-stack;
-            font-style: italic;
-            color: $dark-color;
+            span {
+                font-family: $font-stack;
+                font-style: italic;
+                color: $dark-color;
+            }
+        
+            @include desktop {
+                font-size: 1.8rem;
+                max-width: 960px;
+                margin: 0 auto;
+            }
         }
-    
-        @include desktop {
-            font-size: 1.8rem;
-            max-width: 960px;
-            margin: 0 auto;
-        }
+
+        p{
+            padding: 1em 0;
+            color: rgb(22, 100, 164);
+            font-size: 1.2rem;
+            text-align: center;
+            line-height: 1.5;
+
+            a{
+                text-decoration: none;
+                font-weight: 700;
+                color: $dark-color;
+            }
         }
     }
     
