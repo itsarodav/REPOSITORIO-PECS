@@ -52,11 +52,12 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 2em;
             width: 100%;
             margin-bottom: 4em;
 
             @include desktop{
-                max-width: 1440px;
+                max-width: 1200px;
             }
 
         .intro-comida {
@@ -66,7 +67,11 @@
             gap: 1em;
             padding: 1em 0;
             width: 100%;
-            margin-bottom: 1.5em;
+            margin:1em 0;
+
+            @include desktop{
+                margin:2em 0;
+            }
             
             h2{
                 color: $dark-color;
@@ -94,17 +99,36 @@
             .card-receta{
                 display: flex;
                 flex-direction: column;
-                gap: 1.8em;
+                gap: 2em;
+                text-decoration: none;
                 background-color: #fcfcfc;
                 border-radius: 16px;
                 padding: 2em 1.8em;
                 box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
                 cursor: pointer;
 
+                .card-receta:hover{
+                    background-color: aqua;
+                }
+
+                @include desktop{
+                    gap: 4em;
+                    padding: 3em;
+                }
+
                 img{
                     height: auto;
                     width: 100%;
                     border-radius: 8px;
+                    transition: transform 0.4s ease;
+                }
+
+                &:hover {
+                    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); // sombra al hacer hover
+                
+                    img {
+                        transform: scale(1.02);
+                    }
                 }
 
                 .card-text{
@@ -137,6 +161,7 @@
                     border: solid 1px $dark-color;
                     text-decoration: none;
                     outline: none;
+
                 }
             }
         }

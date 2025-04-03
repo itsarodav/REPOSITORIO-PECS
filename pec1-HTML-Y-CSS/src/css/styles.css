@@ -258,12 +258,13 @@ footer p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2em;
   width: 100%;
   margin-bottom: 4em;
 }
 @media (min-width: 1024px) {
   .comida-criolla .container-general {
-    max-width: 1440px;
+    max-width: 1200px;
   }
 }
 .comida-criolla .container-general .intro-comida {
@@ -273,7 +274,12 @@ footer p {
   gap: 1em;
   padding: 1em 0;
   width: 100%;
-  margin-bottom: 1.5em;
+  margin: 1em 0;
+}
+@media (min-width: 1024px) {
+  .comida-criolla .container-general .intro-comida {
+    margin: 2em 0;
+  }
 }
 .comida-criolla .container-general .intro-comida h2 {
   color: #262626;
@@ -297,17 +303,34 @@ footer p {
 .comida-criolla .container-general .grid-recetas-criollas .card-receta {
   display: flex;
   flex-direction: column;
-  gap: 1.8em;
+  gap: 2em;
+  text-decoration: none;
   background-color: #fcfcfc;
   border-radius: 16px;
   padding: 2em 1.8em;
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
+.comida-criolla .container-general .grid-recetas-criollas .card-receta .card-receta:hover {
+  background-color: aqua;
+}
+@media (min-width: 1024px) {
+  .comida-criolla .container-general .grid-recetas-criollas .card-receta {
+    gap: 4em;
+    padding: 3em;
+  }
+}
 .comida-criolla .container-general .grid-recetas-criollas .card-receta img {
   height: auto;
   width: 100%;
   border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+.comida-criolla .container-general .grid-recetas-criollas .card-receta:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.comida-criolla .container-general .grid-recetas-criollas .card-receta:hover img {
+  transform: scale(1.02);
 }
 .comida-criolla .container-general .grid-recetas-criollas .card-receta .card-text {
   display: flex;
