@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:pec1": "parcel pec1-HTML-Y-CSS/src/index.html --dist-dir pec1-HTML-Y-CSS/dist --port 3000",
-    "build:pec1": "parcel build pec1-HTML-Y-CSS/src/index.html --dist-dir pec1-HTML-Y-CSS/dist",
+    "dev:pecs": "parcel pec1-HTML-Y-CSS/src/index.html --dist-dir pec1-HTML-Y-CSS/dist --port 3000",
+    "build:pecs": "parcel build pec1-HTML-Y-CSS/src/index.html --dist-dir pec1-HTML-Y-CSS/dist",
     "build": "parcel build src/index.html",
     "clean": "rimraf dist .parcel-cache",
-    "rebuild": "npm run clean && npm run build:pec1"
+    "rebuild": "npm run clean && npm run build:pecs"
   },
   "keywords": [],
   "author": "",
