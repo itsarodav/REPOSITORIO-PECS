@@ -66,7 +66,11 @@
             </section>
 
             <div class="imgs-lomo">
-                <img src="./img/lomo-saltado-resultado.jpg" alt="imagen de lomo saltado">
+                <picture>
+                    <source srcset="./img/lomo-saltado-resultado.jpg?as=avif&width=800" type="image/avif" media="(min-width: 768px)">
+                    <source srcset="./img/lomo-saltado-resultado.jpg?as=webp&width=600" type="image/webp">
+                    <img src="./img/lomo-saltado-resultado.jpg?width=400" alt="Imagen de lomo saltado" loading="lazy" />
+                </picture>
             </div>
 
             <section class="preparacion">

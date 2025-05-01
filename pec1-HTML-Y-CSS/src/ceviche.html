@@ -66,7 +66,11 @@
             </section>
 
             <div class="imgs-ceviche">
-            <img src="./img/ceviche-listo.jpg" alt="Imagen de ceviche peruano" />
+                <picture>
+                    <source srcset="./img/ceviche-listo.jpg?as=avif&width=800" type="image/avif" media="(min-width: 768px)">
+                    <source srcset="./img/ceviche-listo.jpg?as=webp&width=600" type="image/webp">
+                    <img src="./img/ceviche-listo.jpg?width=400" alt="Imagen de ceviche peruano" loading="lazy" />
+                </picture>
             </div>
 
             <section class="preparacion">

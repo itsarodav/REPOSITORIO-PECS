@@ -116,7 +116,7 @@
                     padding: 3em;
                 }
 
-                img{
+                picture{
                     height: auto;
                     width: 100%;
                     border-radius: 8px;
@@ -126,7 +126,7 @@
                 &:hover {
                     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); // sombra al hacer hover
                 
-                    img {
+                    picture {
                         transform: scale(1.02);
                     }
                 }

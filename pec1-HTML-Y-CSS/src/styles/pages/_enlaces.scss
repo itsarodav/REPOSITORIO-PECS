@@ -1,6 +1,6 @@
 .hero-enlaces {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #111111 98%),
-        url(../img/chicha-morada.jpg);
+        url(../img/chicha-morada.webp);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -140,4 +140,87 @@
         }
     }
 }
-  
+
+.direccion-arte {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+
+    
+    picture {
+        width: 100%;
+        max-width: 900px;
+    
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+    }
+    
+    .textos-finales {
+        max-width: 600px;
+        
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: $dark-color;
+            transition: color 0.3s ease;
+            
+                &:hover {
+                color: $primary-color;
+                }
+        
+                i {
+                font-size: 0.9rem;
+                }
+        }
+    }
+    
+    @include tablet {
+        flex-direction: column;
+        gap: 3rem;
+        
+        picture {
+            max-width: 750px;
+        }
+    }
+
+    @include desktop {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        text-align: left;
+        max-width: 1440px;
+
+        picture {
+            max-width: 600px;
+        }
+
+        .textos-finales {
+            max-width: 600px;
+        }
+    }
+}

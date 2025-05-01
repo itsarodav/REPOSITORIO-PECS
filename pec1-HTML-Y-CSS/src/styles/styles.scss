@@ -61,7 +61,7 @@ html, body{
         }
 
         .hero-home{
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(18, 18, 18, 0.9) 70%), url(../img/hero-section-rp.jpg);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(18, 18, 18, 0.9) 70%), url(../img/hero-section-rp.webp);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -148,63 +148,82 @@ html, body{
                 }
 
                 .card-recetas, .card-recetas:hover, .card-recetas:active, .card-recetas:focus, .card-recetas:visited{
+                    position: relative;
                     width: 100%;
                     height: 450px;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    text-decoration: none;
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-end;
-                    align-items: start;
-                    gap: 0.6em;
-                    padding: 2em;
-                    border-radius: 16px;
-                    text-decoration: none;
-                    outline: none;
                     color: $light-color;
+                    transition: transform 0.3s ease-in-out;
 
-                    h3{
-                        color: $light-color;
+                    picture{
+                        position: absolute;
+                        inset: 0;
+                        z-index: 1;
+                        img {
+                            position: absolute;
+                            top: 0; left: 0;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            z-index: 1;
+                        }
+                    }
+
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%);
+                        z-index: 2;
+                    }
+
+                    
+                    .overlay-texto {
+                        position: relative;
+                        z-index: 3;
+                        padding: 2em;
+
+                        h3 {
                         font-size: 1.8rem;
+                        margin-bottom: 0.5rem;
 
-                        @include desktop{
+                        @include desktop {
                             font-size: 2rem;
                         }
-                    }
+                        }
 
-                    span, span:hover{
-                        color: $light-color;
-                        font-family: $font-stack-sec;
-                        font-weight: 500;
-                        text-decoration: none;
-                        outline: none;
-                        font-size: 1.3rem;
-                        display: flex;
-                        justify-content: flex-start;
+                        span {
+                        display: inline-flex;
                         align-items: center;
                         gap: 0.5em;
+                        font-size: 1.3rem;
+                        font-family: $font-stack-sec;
+                        font-weight: 500;
+                        color: $light-color;
 
                         img {
+                            width: 20px;
+                            height: auto;
                             transition: transform 0.3s ease;
+                        }
                         }
                     }
 
-                    &:hover span img {
-                        transform: translateX(16px);
-                    }
-
-                    &:hover{
+                    &:hover {
                         transform: scale(1.02);
                         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
                         cursor: pointer;
-                        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                    
+                        span img {
+                            transform: translateX(16px);
+                        }
                     }
-
-                }
-
-                .lomo{
-                    background: linear-gradient(to bottom, rgba(53, 53, 53, 0), rgba(58, 57, 57, 0.8) 98%), url(../img/lomo-saltado.jpg);
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
                 }
 
                 .ceviche{
@@ -374,10 +393,10 @@ html, body{
                 // Mobile (default)
                 @keyframes animarBordes-mobile {
                     0% {
-                    border-radius: 80px 10px 80px 10px;
+                    border-radius: 60px 8px 60px 8px;
                     }
                     100% {
-                    border-radius: 10px 80px 10px 80px;
+                    border-radius: 8px 60px 8px 60px;
                     }
                 }
                 
