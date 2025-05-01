@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sitio Web Recetas</title>
+    <link rel="icon" href="./img/favicon.png?width=32" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -61,8 +62,32 @@
             <div class="contenido-acerca-de">
                 <h2>Desde el <span>alma del Perú</span></h2>
                 <p>La cocina peruana es más que una mezcla de ingredientes; es historia, tradición y pasión servidas en un plato. Cada receta cuenta el legado de culturas ancestrales y la creatividad de generaciones que han dado vida a una de las gastronomías más reconocidas del mundo. Hoy, te invito a llevar ese sabor a tu mesa, a descubrir la magia de los ajíes, los aromas andinos y la fusión que hace única nuestra cocina. No importa si eres experto o si apenas comienzas, atrévete a cocinar, a experimentar y a disfrutar el auténtico sabor del Perú.</p>
+                
             </div>
-            <img src="./img/imgs-gente-peru.png" alt="imagen de personas peruanas de sierra y selva">
+            <div class="imgs-sharp">
+                <picture class="clip-uno">
+                    <source srcset="./img/mujer-peruana-nativa.jpg?as=avif&width=800" type="image/avif" media="(min-width: 1024px)">
+                    <source srcset="./img/mujer-peruana-nativa.jpg?as=webp&width=800" type="image/webp" media="(min-width: 1024px)">
+                    <source srcset="./img/mujer-peruana-nativa.jpg?as=webp&width=400" type="image/webp">
+                    <img src="./img/mujer-peruana-nativa.jpg?width=400" alt="Mujer andina trabajando en la tierra">
+                </picture>
+
+                <picture class="clip-dos">
+                    <source srcset="./img/hombre-nativo-peruano.jpg?as=avif&width=800" type="image/avif" media="(min-width: 1024px)">
+                    <source srcset="./img/hombre-nativo-peruano.jpg?as=webp&width=800" type="image/webp" media="(min-width: 1024px)">
+                    <source srcset="./img/hombre-nativo-peruano.jpg?as=webp&width=400" type="image/webp">
+                    <img src="./img/hombre-nativo-peruano.jpg?width=400" alt="Hombre nativo de la selva peruana">
+                </picture>
+
+                <div class="bandera-peru" aria-hidden="true">
+                    <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bandera de Perú animada">
+                        <title>Bandera de Perú animada</title>
+                        <rect width="100" height="200" x="0" fill="#c00625" />
+                        <rect width="100" height="200" x="100" fill="#ffffff" />
+                        <rect width="100" height="200" x="200" fill="#c00625" />
+                    </svg>
+                </div>
+            </div>
         </div>
     </main>
 
