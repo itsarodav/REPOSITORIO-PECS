@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Consulta las referencias de imágenes, recursos y herramientas utilizados en nuestra web de recetas peruanas. Créditos visuales y enlaces educativos.">
+    <meta name="keywords" content="referencias, créditos, enlaces, imágenes recetas, pexels, recursos web, recetas peruanas, herramientas HTML CSS, MDN Web Docs">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Referencias y enlaces</title>
     <link rel="icon" href="./img/favicon.png?width=32" type="image/png">
@@ -192,18 +194,14 @@
 
             <picture>
 
-                <!-- Desktop -->
+
                 <source srcset="./img/mdn-img-desktop.jpg?as=avif&width=1200" type="image/avif" media="(min-width: 1024px)" />
                 <source srcset="./img/mdn-img-desktop.jpg?as=webp&width=1200" type="image/webp" media="(min-width: 1024px)" />
 
-                <!-- tablet -->
                 <source srcset="./img/mdn-img-tablet.jpg?as=webp&width=800" type="image/webp" media="(min-width: 600px)" />
-
-                <!-- móvil -->
                 <source srcset="./img/mdn-img-mobile.jpg?as=webp&width=400" type="image/webp" />
 
-                <!-- Fallback JPG/PNG -->
-                <img src="./img/mdn-img-desktop.jpg" alt="Imagen que muestra estilos CSS en pantalla de ordenador" />
+                <img src="./img/mdn-img-desktop.jpg" alt="Imagen que muestra estilos CSS en pantalla de ordenador" loading="lazy" />
                 
             </picture>
             
