@@ -14,13 +14,15 @@ header {
         }
     
         .logo {
-        max-width: 80%;
+        //max-width: 80%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
     
         img {
-            max-width: 100%;
+        width: 100%;
+        height: auto;
+        max-width: 180px;
         }
         }
     
