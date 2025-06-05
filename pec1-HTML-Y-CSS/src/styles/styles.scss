@@ -78,7 +78,7 @@ html, body{
         }
 
         .hero-home{
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(18, 18, 18, 0.9) 70%), url('../img/hero-section-rp.webp');
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(18, 18, 18, 0.9) 70%);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -91,6 +91,15 @@ html, body{
             align-items: flex-end;
             justify-content: flex-end;
             padding: 40px;
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(18, 18, 18, 0.9) 70%);
+                z-index: 1;
+            }
 
             @include tablet{
                 height: 600px;
@@ -98,10 +107,32 @@ html, body{
 
             @include desktop{
                 height: 85vh;
+
+            }
+
+            .hero-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+                img {
+
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+            @include desktop{
+                height: 85vh;
+            }
+                
+                }
             }
 
             h1{
                 position: absolute;
+                z-index: 2;
                 bottom: 32px;
                 right: 32px;
                 width: 80%;
