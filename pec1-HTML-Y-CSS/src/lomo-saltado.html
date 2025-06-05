@@ -91,13 +91,14 @@
             <section class="video-receta">
                 <h2>Ver el video de la receta</h2>
                 <figure class="video-container">
-                    <iframe 
-                        loading="lazy"
-                        src="https://www.youtube.com/embed/mXnGpVLdTGM" 
-                        title="Video de receta de Lomo Saltado"  
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                    <div class="youtube-placeholder" data-video-id="mXnGpVLdTGM">
+                        <img 
+                            src="https://img.youtube.com/vi/mXnGpVLdTGM/hqdefault.jpg" 
+                            alt="Miniatura del video de Lomo Saltado" 
+                            loading="lazy"
+                        >
+                        <button class="play-btn" aria-label="Reproducir video">&#9654</button>
+                    </div>
                     <figcaption>Aprende a preparar el Lomo Saltado paso a paso con este video tutorial.</figcaption>
                 </figure>
             </section>

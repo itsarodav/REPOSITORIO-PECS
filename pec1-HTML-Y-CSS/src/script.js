@@ -37,3 +37,24 @@ menuToggle.addEventListener('click', () => {
     }
 });
 
+//Youtube
+
+document.querySelectorAll('.youtube-placeholder').forEach(el => {
+  el.addEventListener('click', () => {
+    const videoId = el.dataset.videoId;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    iframe.title = 'Video de YouTube';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    iframe.loading = 'lazy';
+
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = '0';
+
+    el.innerHTML = '';
+    el.appendChild(iframe);
+  });
+});
+
